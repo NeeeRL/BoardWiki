@@ -5,11 +5,11 @@ WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # npmで依存関係をインストール
-COPY front/package*.json ./
+COPY apps/package*.json ./
 RUN npm ci
 
 # Next.jsのソースコードをコピー
-COPY front/ ./
+COPY apps/ ./
 
 # Next.jsを静的ファイルとしてビルド
 RUN npm run build
